@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
 const HEADER = {
   enabled: true,
 
-  text: 'BUS STOP Abzweig n. Niedergrunstedt',
+  text: 'BUS STOP „Abzweig n. Niedergrunstedt“',
 
   height: 140,              // Header height in px
   background: '#FFFFFF',   // Header background
