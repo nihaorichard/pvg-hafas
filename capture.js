@@ -11,7 +11,7 @@ const HEADER = {
   height: 140,              // Header height in px
   background: '#FFFFFF',   // Header background
   textColor: '#000000',    // Text color
-  fontSize: 60             // Text size in px
+  fontSize: 80             // Text size in px
 };
 
 
