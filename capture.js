@@ -7,7 +7,7 @@ const HEADER = {
   enabled: true,
 
   // First row
-  line1: 'Bushaltestelle',
+  line1: 'BUS STOP Abzweig n. Niedergrunstedt',
 
   // Second row
   line2HTML: `
@@ -21,13 +21,13 @@ const HEADER = {
   `,
 
   // Header appearance
-  height: 100,             // Header height in pixels
-  background: '#000000',   // Header background color
-  textColor: '#FFFFFF',    // Text color
+  height: 140,             // Header height in pixels
+  background: '#FFFFFF',   // Header background color
+  textColor: '#000000',    // Text color
 
   // Font sizes
-  line1FontSize: 30,       // First row
-  line2FontSize: 20        // Second row
+  line1FontSize: 35,       // First row
+  line2FontSize: 15        // Second row
 };
 
 
