@@ -8,7 +8,7 @@ const HEADER = {
 
   text: 'BUS STOP Abzweig n. Niedergrunstedt',
 
-  height: 150,              // Header height in px
+  height: 140,              // Header height in px
   background: '#FFFFFF',   // Header background
   textColor: '#000000',    // Text color
   fontSize: 40             // Text size in px
