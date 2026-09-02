@@ -1,3 +1,12 @@
+const HEADER = {
+  enabled: true,
+  text: 'WEIMAR – ABZWEIG NACH NIEDERGUNSTEDT',
+  height: 60,          // px
+  background: '#000000',
+  textColor: '#FFFFFF',
+  fontSize: 28         // px
+};
+
 const { chromium } = require('playwright');
 
 (async () => {
