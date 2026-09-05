@@ -46,22 +46,22 @@ const LIVE_SCAN_BOX = {
   enabled: true,
 
   // Square size in px
-  size: 200,
+  size: 180,
 
   // Box colors
   background: '#000000',
   textColor: '#FFFFFF',
 
   // Text size
-  fontSize: 30,
+  fontSize: 45,
 
   // Position from right and bottom
-  right: 260,
-  bottom: 30,
+  right: 250,
+  bottom: 40,
 
   // Text
-  line1: 'FÜR LIVE',
-  line2: 'QR SCANNEN'
+  line1: 'LIVE BUS',
+  line2: 'SCAN QR'
 };
 
 
