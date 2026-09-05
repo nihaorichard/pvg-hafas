@@ -57,11 +57,11 @@ const LIVE_SCAN_BOX = {
 
   // Position from right and bottom
   right: 250,
-  bottom: 40,
+  bottom: 35,
 
   // Text
-  line1: 'LIVE BUS',
-  line2: 'SCAN QR'
+  line1: 'Sry. CLOUD',
+  line2: 'STÖRUNG...'
 };
 
 
