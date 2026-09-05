@@ -53,7 +53,7 @@ const LIVE_SCAN_BOX = {
   textColor: '#FFFFFF',
 
   // Text size
-  fontSize: 45,
+  fontSize: 40,
 
   // Position from right and bottom
   right: 250,
