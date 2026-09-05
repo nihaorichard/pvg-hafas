@@ -8,15 +8,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install playwright
+
+      - run: npm install
+
       - run: npx playwright install chromium --with-deps
+
       - run: node capture.js
-      
+
       - name: Publish Image to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
