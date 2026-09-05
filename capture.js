@@ -23,21 +23,22 @@ const QR = {
   enabled: true,
 
   // Website encoded in the QR code
-  contentUrl: 'https://CONTENTURL.NET',
+  contentUrl: 'https://vmt.hafas.cloud/mct/views/monitor/index.html?cfgFile=Bb01FAozvVHK2oWN7hjA_1612186328552',
 
-  // QR CODE SIZE
-  // This is the actual QR code size in px
+  // TOTAL QR SQUARE SIZE in px
+  // Includes the border
   size: 200,
 
-  // QR CODE COLORS
+  // QR code color
   color: '#000000',
+
+  // QR code + border background
   background: '#FFFFFF',
 
-  // BORDER / QUIET ZONE
-  // Extra space around the QR code in px
+  // Actual border in px
   border: 10,
 
-  // POSITION
+  // Position
   right: 30,
   bottom: 30
 };
