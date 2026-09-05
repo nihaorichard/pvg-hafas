@@ -56,8 +56,8 @@ const LIVE_SCAN_BOX = {
   fontSize: 30,
 
   // Position from right and bottom
-  right: 30,
-  bottom: 260,
+  right: 260,
+  bottom: 30,
 
   // Text
   line1: 'FÜR LIVE',
