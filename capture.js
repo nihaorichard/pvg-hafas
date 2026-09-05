@@ -9,10 +9,10 @@ const HEADER = {
 
   text: 'BUS STOP „Abzweig n. Niedergrunstedt“',
 
-  height: 140,              // Header height in px
-  background: '#FFFFFF',    // Header background
-  textColor: '#000000',     // Header text color
-  fontSize: 80              // Header text size in px
+  height: 140,
+  background: '#FFFFFF',
+  textColor: '#000000',
+  fontSize: 80
 };
 
 
@@ -25,17 +25,19 @@ const QR = {
   // Website encoded in the QR code
   contentUrl: 'https://CONTENTURL.NET',
 
-  // QR code size in px
-  // Width and height are ALWAYS the same
+  // QR CODE SIZE
+  // This is the actual QR code size in px
   size: 200,
 
-  // QR code color
+  // QR CODE COLORS
   color: '#000000',
-
-  // QR code background color
   background: '#FFFFFF',
 
-  // Position from screen edges
+  // BORDER / QUIET ZONE
+  // Extra space around the QR code in px
+  border: 10,
+
+  // POSITION
   right: 30,
   bottom: 30
 };
@@ -86,55 +88,31 @@ const QR = {
 
       bar.innerText = header.text;
 
-
-      // Header styling
       Object.assign(bar.style, {
-
         position: 'fixed',
-
         top: '0',
         left: '0',
-
         width: '100%',
-
         height: `${header.height}px`,
-
         background: header.background,
-
         color: header.textColor,
-
         fontSize: `${header.fontSize}px`,
-
         fontFamily: 'Arial, Helvetica, sans-serif',
-
         fontWeight: 'bold',
-
         display: 'flex',
-
         alignItems: 'center',
-
         justifyContent: 'flex-start',
-
         paddingLeft: '20px',
-
         boxSizing: 'border-box',
-
         zIndex: '999999',
-
         lineHeight: '1',
-
         overflow: 'hidden',
-
         whiteSpace: 'nowrap'
       });
 
-
       document.body.appendChild(bar);
 
-
-      // Push HAFAS content down
       document.body.style.paddingTop = `${header.height}px`;
-
       document.body.style.boxSizing = 'border-box';
 
     }, HEADER);
@@ -146,24 +124,24 @@ const QR = {
   // ==============================
   if (QR.enabled) {
 
+    // Generate QR including the requested border
     const qrDataUrl = await QRCode.toDataURL(
       QR.contentUrl,
       {
         width: QR.size,
-
-        margin: 0,
-
+        margin: QR.border,
         color: {
           dark: QR.color,
           light: QR.background
         },
-
         errorCorrectionLevel: 'M'
       }
     );
 
 
-    // Add QR to page
+    // ==============================
+    // ADD QR TO PAGE
+    // ==============================
     await page.evaluate((qr) => {
 
       const qrImage = document.createElement('img');
@@ -172,42 +150,33 @@ const QR = {
 
       qrImage.src = qr.dataUrl;
 
-
-      // QR styling
       Object.assign(qrImage.style, {
-
         position: 'fixed',
 
-        width: `${qr.size}px`,
-
-        height: `${qr.size}px`,
+        // Total displayed size includes the QR + border
+        width: `${qr.totalSize}px`,
+        height: `${qr.totalSize}px`,
 
         right: `${qr.right}px`,
-
         bottom: `${qr.bottom}px`,
 
         display: 'block',
-
         margin: '0',
-
         padding: '0',
 
         zIndex: '999999'
       });
 
-
       document.body.appendChild(qrImage);
 
     }, {
-
       dataUrl: qrDataUrl,
 
-      size: QR.size,
+      // QR size + 2 × border
+      totalSize: QR.size + (QR.border * 2),
 
       right: QR.right,
-
       bottom: QR.bottom
-
     });
   }
 
