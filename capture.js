@@ -60,8 +60,8 @@ const LIVE_SCAN_BOX = {
   bottom: 35,
 
   // Text
-  line1: 'Sry. VMT CLOUD',
-  line2: 'STÖRUNG'
+  line1: 'LIVE BUS',
+  line2: 'SCAN QR'
 };
 
 
